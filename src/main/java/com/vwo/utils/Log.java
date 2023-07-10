@@ -14,22 +14,22 @@ public class Log {
 
     public static void TestExecutionStart(){
         Log.info("****************************************************************************************");
-        Log.info(">>>>>>'APP.VWO' Automation Test Execution Started <<<<<");
+        Log.info(">>>>>>>>>>'APP.VWO' Automation Test Execution Started <<<<<<<<<<");
         Log.info("****************************************************************************************");
     }
 
     public static void TestExecutionEnd(){
-        Log.info("****************************************************************************************");
-        Log.info(">>>>>> Test Execution Ended <<<<<");
-        Log.info("****************************************************************************************");
+        Log.info("**************************************************************************");
+        Log.info(">>>>>>>>>> Test Execution Ended <<<<<<<<<<");
+        Log.info("**************************************************************************");
     }
 
     public static void startTestCase(String sTestCaseName){
-        Log.info("-----> TC Initiated: "+sTestCaseName+" <-----");
+        Log.info("-----> Test Case Initiated: "+sTestCaseName+" <-----");
     }
 
     public static void endTestCase(String sTestCaseName){
-        Log.info("-----> TC Ended: "+sTestCaseName+" <-----");
+        Log.info("-----> Test Case Ended: "+sTestCaseName+" <-----");
     }
 
     // Need to create these methods, so that they can be called

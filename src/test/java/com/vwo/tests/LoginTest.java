@@ -17,15 +17,13 @@ public class LoginTest extends BaseTest {
         super();
     }
 
-
-
     @Test
     @Description("Enter the username and Wrong Password and Click on Sign In. Verify that the Dashboard is Not visible and Error Message is displayed")
     public void testWithInvalidCredentials() throws Exception {
         Log.startTestCase("TC01_testWithInvalidCredentials");
         navigateToURL(PropertyReader.readKey("url"));
         LoginPage loginPage = new LoginPage();
-        String errMsg = loginPage.failLogin(PropertyReader.readKey("username"), "Pass@123");
+        String errMsg = loginPage.failLogin();
         Log.info(errMsg);
         // Verify Error msg for failed login;
         Assert.assertEquals(errMsg, "Your email, password, IP address or location did not match");
@@ -40,7 +38,7 @@ public class LoginTest extends BaseTest {
         navigateToURL(PropertyReader.readKey("url"));
         LoginPage loginPage = new LoginPage();
         Dashboard dashboardPage = loginPage.
-                loginToVWO(PropertyReader.readKey("username"), PropertyReader.readKey("password"))
+                loginToVWO()
                 .afterSuccessfulLogin();
 
         // Verify loggedIn username

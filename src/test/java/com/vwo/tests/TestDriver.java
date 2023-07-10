@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 import static org.testng.Assert.assertEquals;
 
 public class TestDriver
@@ -78,6 +80,8 @@ public class TestDriver
         String homeTitle = driver.getTitle();
         Assert.assertEquals(homeTitle, TITLE);
     }
+
+
 
     @AfterSuite
     public void tearDown(){

@@ -2,6 +2,7 @@ package com.vwo.pages;
 
 import com.vwo.base.BasePage;
 import com.vwo.utils.Log;
+import com.vwo.utils.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -33,10 +34,10 @@ public class LoginPage extends BasePage {
         click(signInButton);
     }
 
-    public LoginPage loginToVWO(String username, String password){
+    public LoginPage loginToVWO() throws Exception {
         Log.info("Logging into application");
-        inputUsername(username);
-        inputPassword(password);
+        inputUsername(PropertyReader.readKey("username"));
+        inputPassword(PropertyReader.readKey("password"));
         clickSignInButton();
         Log.info("Logged in successfully");
         return this;
@@ -46,8 +47,11 @@ public class LoginPage extends BasePage {
         return new Dashboard();
     }
 
-    public String failLogin(String username, String password){
-        loginToVWO(username, password);
+    public String failLogin() throws Exception {
+        Log.info("Logging into application");
+        inputUsername(PropertyReader.readKey("username"));
+        inputPassword(PropertyReader.readKey("incorrectPass"));
+        clickSignInButton();
         waitForVisibilityOfElement(errorMsg);
         Log.error("Failed to Login into application");
         return getText(errorMsg);

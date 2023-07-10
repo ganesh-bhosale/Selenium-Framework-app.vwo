@@ -13,6 +13,8 @@ public class Dashboard extends BasePage {
 
     // Page Locators
     By userNameOnDashboard = By.cssSelector("[data-qa=\"lufexuloga\"]");
+    By userMenu = By.cssSelector("[data-qa='user-image']");
+    By editProfileOption = By.xpath("//li[text()='Edit Profile']");
 
     // Page Actions
     public String loggedInUserName(){
@@ -22,5 +24,16 @@ public class Dashboard extends BasePage {
 
     public String getDashboardPageTitle(){
         return getPageTitle();
+    }
+
+    public void editProfile(){
+        waitForVisibilityOfElement(userNameOnDashboard);
+        click(userMenu);
+        click(editProfileOption);
+    }
+
+    public ProfileDetails openEditProfile(){
+        editProfile();
+        return new ProfileDetails();
     }
 }

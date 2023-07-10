@@ -24,6 +24,10 @@ public class BaseTest {
         Log.TestExecutionStart();
     }
 
+    public void navigateToURL(String url){
+        DriverManagerTL.getDriver().get(url);
+    }
+
     @AfterClass
     protected void tearDown(){
         DriverManagerTL.tearDown();
@@ -34,7 +38,4 @@ public class BaseTest {
         Allure.addAttachment(name, new ByteArrayInputStream(((TakesScreenshot) DriverManagerTL.getDriver()).getScreenshotAs(OutputType.BYTES)));
     }
 
-    public void navigateToURL(String url){
-        DriverManagerTL.getDriver().get(url);
-    }
 }
