@@ -14,10 +14,9 @@ public class EditProfileTest extends BaseTest {
         super();
     }
 
-
     @Test
-    public void TC02_testEditUserProfile() throws Exception {
-        Log.startTestCase("TC02_testEditUserProfile");
+    public void testEditUserProfile() throws Exception {
+        Log.startTestCase("TC03_testEditUserProfile");
         navigateToURL(PropertyReader.readKey("url"));
         ProfileDetails profileDetails = new LoginPage().loginToVWO().afterSuccessfulLogin().openEditProfile();
         Log.info("Edit Profile page opened");
@@ -28,6 +27,6 @@ public class EditProfileTest extends BaseTest {
         profileDetails.uploadProfileImage(PropertyReader.readKey("profilePicPath"));
         profileDetails.saveProfile();
         Thread.sleep(3000);
-        Log.endTestCase("TC02_testEditUserProfile");
+        Log.endTestCase("TC03_testEditUserProfile");
     }
 }

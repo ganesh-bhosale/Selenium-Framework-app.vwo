@@ -5,6 +5,7 @@ import com.vwo.utils.DriverManagerTL;
 import com.vwo.utils.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class ProfileDetails extends BasePage {
 
@@ -90,16 +91,15 @@ public class ProfileDetails extends BasePage {
 
     public void saveProfile(){
         try{
-            waitForVisibilityOfElement(saveButton);
+            waitForPresenceOfElement(saveButton);
             click(saveButton);
             waitForInvisibilityOfElement(saveButton);
             Log.info("Profile Edit saved !");
         }
         catch (Exception e){
             e.printStackTrace();
-            Log.error("Failed to save profile");
+            Assert.fail("Failed to save profile");
         }
     }
-
 
 }
