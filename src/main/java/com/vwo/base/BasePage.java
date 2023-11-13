@@ -39,9 +39,9 @@ public class BasePage {
     }
 
     // Write a text
-    public void inputText(By element, String text){
-        DriverManagerTL.getDriver().findElement(element).clear();
-        DriverManagerTL.getDriver().findElement(element).sendKeys(text);
+    public void inputText(By locator, String text){
+        DriverManagerTL.getDriver().findElement(locator).clear();
+        DriverManagerTL.getDriver().findElement(locator).sendKeys(text);
     }
 
     public void inputText(WebElement element, String text){

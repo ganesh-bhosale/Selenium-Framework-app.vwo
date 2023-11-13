@@ -10,14 +10,13 @@ public class Log {
     private static Logger Log = Logger.getLogger(Log.class.getName());
     // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
 
-    //This is to print log for the ending of the test case
-
     public static void TestExecutionStart(){
         Log.info("****************************************************************************************");
         Log.info(">>>>>>>>>>'APP.VWO' Automation Test Execution Started <<<<<<<<<<");
         Log.info("****************************************************************************************");
     }
 
+    //This is to print log for the ending of the test case
     public static void TestExecutionEnd(){
         Log.info("**************************************************************************");
         Log.info(">>>>>>>>>> Test Execution Ended <<<<<<<<<<");

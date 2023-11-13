@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+// import java.util.concurrent.TimeUnit;
 
 public class WaitForHelper {
 
@@ -17,9 +17,11 @@ public class WaitForHelper {
         this.driver = driver;
     }
 
-    public void implicitlyWait(){
+    /*public void implicitlyWait(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
+     */
 
     public WebElement presenceOfElement(By elementLocation){
         return new WebDriverWait(driver, Duration.ofSeconds(3000)).until(ExpectedConditions.presenceOfElementLocated(elementLocation));
